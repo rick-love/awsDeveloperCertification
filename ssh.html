@@ -2,9 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/f0daac4093.js" crossorigin="anonymous"></script>
     <title>AWS Certified Developer Associate</title>
 </head>
 
@@ -22,33 +24,37 @@
     </nav>
     <section class="container">
 
-
         <h2>SSH Overview</h2>
         <p>Allows control of machine through command line</p>
-        <p>SSH uses <strong>PORT - </strong>
-        <h4>22</h4>
+        <p>SSH uses <strong>PORT - </strong><h4>22</h4>
         </p>
 
-        <h3>Using a Linux/Mac OS X</h3>
-        <ol>
-            <li>Place .pem file in Root Folder</li>
-            <li>From Terminal – chmod 0400 filename.pem</li>
-            <li>From Terminal – ssh –i filename.pem ec2-user@{ Public IP ADDRESS }</li>
-            <li>whoami - command will return userId</li>
-            <li>cntrl - d (to exit)</li>
-        </ol>
-        <h3>Using Windows</h3>
-        <ol>
-            <li>Load filename.PEM in PuttyGen – Select All Files to view .pem</li>
-            <li>Save Private Key (filename.PPK)</li>
-            <li>Open Putty</li>
-            <li>Enter Connection Data:</li>
-            <ul>
-                <li>Host Name: ec2-user@{ Public IP ADDRESS } </li>
-                <li>Connection/SSH/Auth/Browse: filename.PPK</li>
-                <li>Saved Session Data</li>
-            </ul>
-        </ol>
+        <div class="card list">
+            <h3 class="p-1">Using a Linux/Mac OS X</h3>
+            <ol>
+                <li>Place .pem file in Root Folder</li>
+                <li>From Terminal – chmod 0400 filename.pem</li>
+                <li>From Terminal – ssh –i filename.pem ec2-user@{ Public IP ADDRESS }</li>
+                <li>whoami - command will return userId</li>
+                <li>cntrl - d (to exit)</li>
+            </ol>
+        </div>
+
+        <div class="card list">
+            <h3 class="p-1">Using Windows</h3>
+            <ol>
+                <li>Load filename.PEM in PuttyGen – Select All Files to view .pem</li>
+                <li>Save Private Key (filename.PPK)</li>
+                <li>Open Putty</li>
+                <li>Enter Connection Data:</li>
+                <ul>
+                    <li>Host Name: ec2-user@{ Public IP ADDRESS } </li>
+                    <li>Connection/SSH/Auth/Browse: filename.PPK</li>
+                    <li>Saved Session Data</li>
+                </ul>
+            </ol>
+
+        </div>
         <h3>Windows 10+</h3>
         <ol>
             <li>Powershell: type ssh</li>

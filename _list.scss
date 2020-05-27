@@ -1,8 +1,14 @@
 .list {
     border: solid black 1px;
+    ol, ul {
+        padding: 1rem;
+        padding-left: 3rem;
+        li{
+            padding: 0.25rem;
+        }
+    }
     ul {
         list-style: none;
-        padding: 1rem;
     }
     h1{
         text-align: center;
