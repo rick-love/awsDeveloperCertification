@@ -1,0 +1,16 @@
+// Table Formatting
+table {
+  border: solid 1px black;
+  thead {
+    background: $secondary-color;
+    color: #fff;
+  }
+  td
+   {
+    padding: 1rem;
+    text-align: left;
+  }
+  tr:nth-child(even) {
+    background-color: $light-color;
+  }
+}

@@ -1,0 +1,34 @@
+$primary-color: rgba(35, 38, 246, 1);
+$secondary-color: rgba(0, 62, 143, 1);
+$light-color: rgba(231, 231, 254, 1);
+$danger-color: rgba(235, 10, 10, 1);
+$dark-color: rgba(48, 48, 48, 1);
+$success-color: #28a745;
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  margin: 1rem;
+  padding: 1rem;
+
+}
+/* Center All */
+.all-center {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+// Card
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

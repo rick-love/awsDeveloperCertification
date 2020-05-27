@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>AWS Certified Developer Associate</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2>Home</h2>
+        <ul>
+            <li><a href="#">IAM + EC2</a></li>
+            <li><a href="#"></a>SSH</li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+
+        </ul>
+    </nav>
+    <section class="container">
+
+
+        <h2>SSH Overview</h2>
+        <p>Allows control of machine through command line</p>
+        <p>SSH uses <strong>PORT - </strong>
+        <h4>22</h4>
+        </p>
+
+        <h3>Using a Linux/Mac OS X</h3>
+        <ol>
+            <li>Place .pem file in Root Folder</li>
+            <li>From Terminal – chmod 0400 filename.pem</li>
+            <li>From Terminal – ssh –i filename.pem ec2-user@{ Public IP ADDRESS }</li>
+            <li>whoami - command will return userId</li>
+            <li>cntrl - d (to exit)</li>
+        </ol>
+        <h3>Using Windows</h3>
+        <ol>
+            <li>Load filename.PEM in PuttyGen – Select All Files to view .pem</li>
+            <li>Save Private Key (filename.PPK)</li>
+            <li>Open Putty</li>
+            <li>Enter Connection Data:</li>
+            <ul>
+                <li>Host Name: ec2-user@{ Public IP ADDRESS } </li>
+                <li>Connection/SSH/Auth/Browse: filename.PPK</li>
+                <li>Saved Session Data</li>
+            </ul>
+        </ol>
+        <h3>Windows 10+</h3>
+        <ol>
+            <li>Powershell: type ssh</li>
+            <li>Unlock .pem file</li>
+            <ul>
+                <li>Right Click .pem file</li>
+                <li>Properties : Eigenshaften</li>
+                <li>Security : Sicherheit</li>
+                <li>Advanced : Erweitert</li>
+                <li>Check Owner is "Self"</li>
+                <li>Remove All other users in "Permission Entries: Berechtigungseinträge"</li>
+                <li>Disable Inheritance : Vererbung deaktivieren</li>
+                <li>Convert : Vererbte</li>
+                <li>Remove : Entfernen - System and Adminstrator</li>
+                <li>Apply : Übernehmen</li>
+                <li>OK</li>
+                <li>Double Check user has full control</li>
+            </ul>
+            <li>ssh –i filePath/filename.pem ec2-user@{ Public IP ADDRESS }</li>
+        </ol>
+
+        <div class="apache">
+            <h1>Install Apache Web Server - Linux AMI</h1>
+            <ul>
+                <li>SSH in to EC2</li>
+                <li>sudo su</li>
+                <li>yum update -y</li>
+                <li>yum install -y httpd.x86_64</li>
+                <li>systemctl start httpd.service</li>
+                <li>systemctl enable httpd.service - Enabled accross reboots</li>
+                <li>curl localhost:80 - shows webpage</li>
+            </ul>
+            <h3>Add HTTP(S) to a security group and attach to EC2</h3>
+            <ul>
+                <li>echo "Hallo" > /var/www/html/index.html</li>
+                <li>echo "Hallo from $(hostname -f)"> /var/www/html/index.html</li>
+            </ul>
+            <h1>EC2 User Data - Bootstrapping Script - Linux</h1>
+            <small>Boots instance with software installed</small>
+            <textarea name="Data" id="userDataScript" cols="30" rows="10">
+                #!/bin/bash
+                # install httpd (Linux2 version)
+                yum update -y
+                yum install -y httpd.x86_64
+                systemctl start httpd.service
+                systemctl enable httpd.service
+                echo "Hallo zusammen $(hostname -f)" > /var/www/html/index.html
+                
+            </textarea>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

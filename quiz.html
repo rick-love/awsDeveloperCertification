@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>IAM and EC2</h1>
+        <ul>
+            <li>Anything that ends with a letter is an AZ</li>
+            <li>Availability Zones are in isolated data Centers
+                <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and AZ</a>
+            </li>
+            <li>"Organisations" does not exist in IAM</li>
+            <li>IAM is a global service (encompasses all regions)</li>
+            <li>An IAM user can belong to multiple groups</li>
+            <li>Best practice is to create multiple users and groups, assign policies to the groups</li>
+            <li>You pay for an EC2 instance compute component - <strong>ONLY</strong> when it's running</li>
+            <li>Permission error exception when trying to SSH into your Linux Instance - chmod 0400 is missing</li>
+            <li>Network timeout when trying to SSH into your EC2 instance - Security Group is misconfigured</li>
+            <li>When a security group is created, what is the default behavior? - Deny all inbound and allow all outbound</li>
+            <li>Security groups can <strong>NOT</strong> reference <strong>DNS Name</strong></li>
+            <li>Startup instructions to your EC2 instances - EC2 User Data</li>
+            <li>You are launching an EC2 instance in us-east-1 using this Python script snippet:
+
+                (we will see SDK in a later section, for now just look at the code reference ImageId)
+                
+                ec2.create_instances(ImageId='ami-b23a5e7', MinCount=1, MaxCount=1)
+                It works well, so you decide to deploy your script in us-west-1 as well. There, the script does not work and fails with "ami not found" error. What's the problem?
+            <h4>AMI is region locked and same ID cannot be used across regions</h4>
+            </li>
+            <li>You would like to deploy a database technology and the vendor license bills you based on the physical cores and underlying network socket visibility. Which EC2 launch modes allow you to get visibility into them?
+                <h4>Dedicated Hosts</h4>
+            </li>
+            <li>You are running a critical workload of three hours per week, on Monday. As a solutions architect, which EC2 Instance Launch Type should you choose to maximize the cost savings while ensuring the application stability?
+                <h4>Scheduled Reserved Instances</h4>
+            </li>
+
+        </ul>
+    </section>
+</body>
+</html>

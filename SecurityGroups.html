@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <title>AWS Certified Developer Associate</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      ADD NAV
+    </nav>
+    <section class="container grid-2">
+      <div class="list card">
+        <h1>Security Groups</h1>
+        <ul>
+          <li>Firewall for EC2 Instances</li>
+          <li>Regulate:</li>
+          <ol class="m-2">
+            <li>Access to PORTS</li>
+            <li>Authorise IP Ranges - IPv4 and IPv6</li>
+            <li>Control of Inbound network</li>
+            <li>Control of Outbound network</li>
+          </ol>
+          <li>Can be attached to multiple EC2 Instances</li>
+          <li>Locked Down to Region</li>
+          <li>Live Outside of EC2 Instance</li>
+          <li>Time Out = Security Group Issue</li>
+          <li>Connection Refused = Application Error</li>
+          <li>Default Inbound: All traffic is <strong>BLOCKED</strong></li>
+          <li>Default Outbound: All traffic is <strong>Authorized</strong></li>
+        </ul>
+      </div>
+
+      <div class="card list">
+        <h1>Private/Public/Elastic IP</h1>
+        <ul>
+          <li>IPv4: [0-255].[0-255].[0-255].[0-255]</li>
+          <li>IPv6: Used more for IoT</li>
+          <li>Elastic</li>
+        </ul>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <td>Public IP</td>
+            <td>Private IP</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Can be indentified on Internet</td>
+            <td>Private Network Only</td>
+          </tr>
+          <tr>
+            <td>Must be unique across WWW</td>
+            <td>Unique Accross Network</td>
+          </tr>
+          <tr>
+            <td>Geo-located easily</td>
+            <td>connect to WWW through internet gateway(Proxy)</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Only Specified Tange of IP can be used</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>

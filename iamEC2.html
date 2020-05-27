@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>AWS Certified Developer Associate</title>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <h2>Home</h2>
+      <ul>
+        <li><a href="#">IAM + EC2</a></li>
+        <li><a href="#">SSH</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+    </nav>
+    <section class="container">
+      <h1>Identity and Access Management</h1>
+      <p>IAM has a <strong>GLOBAL</strong> view and Contains:</p>
+      <ul>
+        <li>Users, Groups, Roles</li>
+        <li>Permissions are governed by policies (JSON)</li>
+        <li>MFA can be set up</li>
+        <li>IAM has predefined 'managed policies'</li>
+        <li>
+          It is best to give users minimal amount of permissions needed to
+          perform their job.
+        </li>
+      </ul>
+      <div class="iam101">
+        <h1>IAM 101</h1>
+        <h2><strong>ONE:</strong></h2>
+        <ul>
+          <li>IAM User per Physical Person</li>
+          <li>IAM Role per Application</li>
+        </ul>
+        <h2><strong>NEVER:</strong></h2>
+        <ul>
+          <li>COMMIT IAM credentials</li>
+          <li>Write IAM credentials in code</li>
+          <li>share IAM credentials</li>
+          <li>User Root Account except for initial setup</li>
+          <li>Use ROOT IAM Credentials</li>
+        </ul>
+      </div>
+    </section>
+    <section class="container">
+      <table id="instanceTypes" class="table">
+        <thead>
+          <tr>
+            <td></td>
+            <td>
+              <h4>EC2 Instance Types</h4>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R:</td>
+            <td>Application that need a lot of RAM – in Memory caches</td>
+          </tr>
+          <tr>
+            <td>C:</td>
+            <td>applications that needs good CPU – compute / database</td>
+          </tr>
+          <tr>
+            <td>M:</td>
+            <td>
+              applications that are balanced (think “medium”) – general /web
+              application
+            </td>
+          </tr>
+          <tr>
+            <td>I:</td>
+            <td>
+              applications that need good local I/O (instance storage) –
+              databases
+            </td>
+          </tr>
+          <tr>
+            <td>G:</td>
+            <td>
+              applications that need a GPU – video rendering / machine learning
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <td>
+              <h4>EC2 Launch Types</h4>
+            </td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OnDemand:</td>
+            <td>Short work load, predictable pricing</td>
+            <td>highest Cost</td>
+            <td>no Long term commitment</td>
+            <td>Billing - per second</td>
+          </tr>
+          <tr>
+            <td>Reserved Instance:</td>
+            <td>Long workloads (>= 1 year)</td>
+            <td>75% discount to OnDemand</td>
+            <td>reserve for 1 - 3 years</td>
+            <td>Great for Database</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Convertible Reserved Instances:</td>
+            <td>Can change EC2 instance type</td>
+            <td>up to 54% discount</td>
+          </tr>
+          <tr>
+            <td>Scheduled Reserved Instances:</td>
+            <td>Launch within a time window you reserve</td>
+            <td>When you require a fracrtion of Day / Week / Month</td>
+          </tr>
+          <tr>
+            <td>Spot Instances:</td>
+            <td>Short workloads, for cheap, can lose instances</td>
+            <td>90% discount to OnDemand</td>
+            <td>Most cost effiecient instance on AWS</td>
+            <td>Good for Batch Jobs, Data Analysis, Image Processing</td>
+            <td>No - databases of critical jobs</td>
+          </tr>
+          <tr>
+            <td>Dedicated Instances:</td>
+            <td>No other Customers will share the instance</td>
+            <td>Hardware is shared</td>
+          </tr>
+          <tr>
+            <td>Dedicated hosts:</td>
+            <td>Book entire physical server, control instance placement</td>
+            <td>visibility to Sockets and Physical Cores</td>
+            <td>
+              Good for regulatory or complaince needs and Bring Your Own Licence
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h1>Elastic Network Interface</h1>
+      <ul>
+        <li>virtual Network Card</li>
+        <h3>Attributes</h3>
+        <ol>
+          <li>Primary Private IPv4</li>
+          <li>One Elastic IP per Private IPv4</li>
+          <li>One or more security groups</li>
+          <li>A MAC address</li>
+          <li>Can be attached on the fly to EC2 instances</li>
+          <li>Bound to AZ</li>
+        </ol>
+      </ul>
+      <h1>EC2 Pricing</h1>
+      <small>Prices vary depending on:</small>
+      <ul>
+        <li>Region</li>
+        <li>Instance Type</li>
+        <li>On-Demand vs Spot vs reserved vs Dedicated Host</li>
+        <li>Linux vs Windows vs Private OS</li>
+        <li>Storage, Data Transfer, laod balancing, elastic IP</li>
+        <li><strong>You are no charged when Instance is "stopped"</strong></li>
+      </ul>
+      <h1>Custom AMI</h1>
+      <small>Advantages</small>
+      <ul>
+        <li>Pre-Installed packages</li>
+        <li>Faster Boot Time</li>
+        <li>Machine can come with configured software</li>
+        <li>control Updates and Maintenance</li>
+        <li>Active directory Out of the Box</li>
+        <li>Install Application ahead of time</li>
+        <li>Using other AMI's designed for Database or Application</li>
+        <li><strong>AMI are AWS Region Specific!!!</strong></li>
+      </ul>
+      <h1>EC2 Overview</h1>
+      <h4>ec2instances.info</h4>
+      <small>5 characteristics:</small>
+      <ol>
+        <li>RAM: (type, amount, generation)</li>
+        <li>CPU: (type, make, frequency, # of cores)</li>
+        <li>I/O (disk performance, EBS, optimization)</li>
+        <li>Network: (bandwidth, latency)</li>
+        <li>Grapgical Processing Unit: (GPU)</li>
+      </ol>
+      <ul>
+        <li>M: Are well balanced</li>
+        <li>T2: Burstable - very good when CPU experience spike in workload</li>
+        <li>R: Ram</li>
+      </ul>
+    </section>
+  </body>
+</html>
