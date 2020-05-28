@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/f0daac4093.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f0daac4093.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>AWS Certified Developer Associate</title>
-</head>
+  </head>
 
-<body>
-    <nav class="navbar">
-        <i class="fab fa-aws"><h5> &nbsp Certified Developer</h5></i>
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Home</a></li>
-        </ul>
-    </nav>
-    <section class="container">
-        <div class="list card">
-            <h1>List</h1>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+  <script>
+    $(function () {
+      $('#NavBarSection').load('navbar.html');
+    });
+  </script>
 
-        </div>
-
-    </section>
-</body>
-
+  <body>
+    <section id="NavBarSection"></section>
+    <section class="container"></section>
+  </body>
 </html>

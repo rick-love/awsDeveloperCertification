@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="/css/style.min.css" />
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
-      <script src="https://kit.fontawesome.com/f0daac4093.js" crossorigin="anonymous"></script>
-      <title>AWS Certified Developer Associate</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f0daac4093.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>AWS Certified Developer Associate</title>
   </head>
+
+  <script>
+    $(function () {
+      $('#NavBarSection').load('navbar.html');
+    });
+  </script>
+
   <body>
-    <nav class="navbar">
-      ADD NAV
-    </nav>
+    <section id="NavBarSection"></section>
     <section class="container grid-2">
       <div class="list card">
         <h1>Security Groups</h1>
@@ -41,35 +52,36 @@
           <li>IPv4: [0-255].[0-255].[0-255].[0-255]</li>
           <li>IPv6: Used more for IoT</li>
           <li>Elastic</li>
+          <li>
+            <table>
+              <thead>
+                <tr>
+                  <td>Public IP</td>
+                  <td>Private IP</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Can be indentified on Internet</td>
+                  <td>Private Network Only</td>
+                </tr>
+                <tr>
+                  <td>Must be unique across WWW</td>
+                  <td>Unique Across Network</td>
+                </tr>
+                <tr>
+                  <td>Geo-located easily</td>
+                  <td>connect to WWW through internet gateway(Proxy)</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Only Specified Range of IP can be used</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
         </ul>
       </div>
-
-      <table>
-        <thead>
-          <tr>
-            <td>Public IP</td>
-            <td>Private IP</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Can be indentified on Internet</td>
-            <td>Private Network Only</td>
-          </tr>
-          <tr>
-            <td>Must be unique across WWW</td>
-            <td>Unique Accross Network</td>
-          </tr>
-          <tr>
-            <td>Geo-located easily</td>
-            <td>connect to WWW through internet gateway(Proxy)</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>Only Specified Tange of IP can be used</td>
-          </tr>
-        </tbody>
-      </table>
     </section>
   </body>
 </html>

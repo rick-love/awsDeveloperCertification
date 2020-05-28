@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/style.min.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
-        <script src="https://kit.fontawesome.com/f0daac4093.js" crossorigin="anonymous"></script>
-        <title>AWS Certified Developer Associate</title>
-    </head>
-<body>
-    <nav class="navbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f0daac4093.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>AWS Certified Developer Associate</title>
+  </head>
 
-    </nav>
-    <section>
-        <h1>AWS Certified Developer Exam</h1>
-        <div>
+  <script>
+    $(function () {
+      $('#NavBarSection').load('navbar.html');
+    });
+  </script>
+
+  <body>
+    <section id="NavBarSection"></section>
+    <h1 class="text-center">AWS Certified Developer Exam</h1>
+        <section class="container grid-2">
+
+        <div class="list card">
             <ul>
                 <li>Two question Types:
                     <li>Multiple-choice: One correct and 3 incorrect responses</li>
@@ -25,7 +38,7 @@
             </ul>
             <a href="/certifiedDeveloper/examGuide.pdf">Exam Guide</a>
         </div>
-        <div class="examDetails">
+        <div id="examDetails" class="card">
             <h1>Exam Details</h1>
             <table>
                 <thead>
@@ -58,7 +71,7 @@
                     </tr>
                 </tbody>
             </table>
-            <ul>
+            <ul class="m-2">
                 <li>Deployment: CICD, Beanstalk, Serverless</li>
                 <li>Security: Deep Dive</li>
                 <li>Development: Serverless, API, SDK, CLI</li>
